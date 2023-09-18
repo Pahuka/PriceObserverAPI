@@ -25,7 +25,8 @@ public class UrlParseService : IUrlParseService
 
 		using (var clnt = new HttpClient(httpHandler, false))
 		{
-			using (var resp = clnt.GetAsync(url + "?ajax=1&similar=1").Result) //TODO: Продумать способ без изменения исходного урла
+			using (var resp = clnt.GetAsync(url + "?ajax=1&similar=1")
+				       .Result) //TODO: Продумать способ без изменения исходного урла
 			{
 				if (resp.IsSuccessStatusCode)
 				{

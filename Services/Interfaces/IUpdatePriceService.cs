@@ -1,5 +1,4 @@
 ﻿using PriceObserverAPI.ViewModels;
-using System.Collections.Generic;
 
 namespace PriceObserverAPI.Services.Interfaces;
 

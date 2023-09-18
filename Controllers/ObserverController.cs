@@ -8,12 +8,12 @@ namespace PriceObserverAPI.Controllers;
 [ApiController]
 public class ObserverController : ControllerBase
 {
+	private readonly IEmailService _emailService;
 	private readonly IObserverService _observerService;
 	private readonly IUrlParseService _parseService;
 	private readonly IUpdatePriceService _updatePriceService;
-	private readonly IEmailService _emailService;
 
-	public ObserverController(IObserverService observerService, IUrlParseService parseService, 
+	public ObserverController(IObserverService observerService, IUrlParseService parseService,
 		IUpdatePriceService updatePriceService, IEmailService emailService)
 	{
 		_observerService = observerService;
@@ -23,7 +23,7 @@ public class ObserverController : ControllerBase
 	}
 
 	/// <summary>
-	/// Подписаться на отслеживание цены
+	///     Подписаться на отслеживание цены
 	/// </summary>
 	/// <param name="url"></param>
 	/// <param name="email"></param>
@@ -43,7 +43,7 @@ public class ObserverController : ControllerBase
 	}
 
 	/// <summary>
-	/// Получить список всех подписок
+	///     Получить список всех подписок
 	/// </summary>
 	/// <returns></returns>
 	[HttpGet("GetAllSucsrcribers")]
@@ -55,7 +55,7 @@ public class ObserverController : ControllerBase
 	}
 
 	/// <summary>
-	/// Обновляет цены подписок и отправляет уведомления по email
+	///     Обновляет цены подписок и отправляет уведомления по email
 	/// </summary>
 	/// <returns></returns>
 	[HttpGet("UpdateAllPrices")]
